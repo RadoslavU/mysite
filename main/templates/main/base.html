@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Моят сайт{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="{% url 'home' %}" class="brand">MySite</a>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Начало</a>
+                <a href="{% url 'about' %}">За нас</a>
+                <a href="{% url 'contact' %}">Контакт</a>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

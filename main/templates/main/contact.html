@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакт{% endblock %}
+
+{% block content %}
+    <section class="page-contact">
+        <div class="page-inner">
+            <h1>Контакт</h1>
+            <p>Можете да ни изпратите съобщение чрез формата по-долу.</p>
+
+            {% if status == 'success' %}
+                <div class="message success">
+                    Благодарим ви! Вашето съобщение беше изпратено успешно.
+                </div>
+            {% endif %}
+
+            {% if errors %}
+                <div class="message error">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'contact' %}" class="contact-form">
+                {% csrf_token %}
+                <label for="id_name">Име</label>
+                <input id="id_name" name="name" type="text" value="{{ name|default_if_none:'' }}" required>
+
+                <label for="id_email">Email</label>
+                <input id="id_email" name="email" type="email" value="{{ email|default_if_none:'' }}" required>
+
+                <label for="id_message">Съобщение</label>
+                <textarea id="id_message" name="message" rows="6" required>{{ message|default_if_none:'' }}</textarea>
+
+                <button type="submit">Изпрати</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

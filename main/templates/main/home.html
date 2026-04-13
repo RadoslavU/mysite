@@ -1,74 +1,68 @@
-<!DOCTYPE html>
-<html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моят сайт</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
-</head>
-<body>
-    <main class="page-shell">
-        <section class="hero">
-            <p class="meta">Модерен дизайн за твоя Django сайт</p>
-            <h1>Здравей, Радо! 🚀</h1>
-            <p class="lead">Това вече е истинска HTML страница с Django. Нещата изглеждат свежо, изчистено и адаптивно на всеки екран.</p>
-            <button class="btn-primary" onclick="alert('Работи!')">Натисни ме</button>
-        </section>
+{% extends 'main/base.html' %}
 
-        <section class="card">
-            <p>Добре дошъл на началната страница. Това е модерна секция, която показва динамичния потенциал на Django, със стил, с който страницата изглежда професионално и приятелски към потребителя.</p>
-            <p>Можеш да добавиш повече съдържание, карти и секции, но вече имаш силна основа с плавен градиент, удобна типография и модерен бутон.</p>
-        </section>
+{% block title %}Моят сайт{% endblock %}
 
-        <section class="section-block projects">
-            <div class="section-header">
-                <p class="eyebrow">Изпълнени проекти</p>
-                <h2>Проекти, които движат бизнеса напред</h2>
-            </div>
-            <div class="project-grid">
-                <article class="project-card">
-                    <h3>Уеб портал за клиенти</h3>
-                    <p>Създадохме бърза платформа за регистрация, управление на поръчки и дигитално обслужване.</p>
-                </article>
-                <article class="project-card">
-                    <h3>Респонсив онлайн магазин</h3>
-                    <p>Дизайн и разработка на магазин с лесна навигация, бърз checkout и адаптивен интерфейс.</p>
-                </article>
-                <article class="project-card">
-                    <h3>Интерактивна галерия</h3>
-                    <p>Визуална презентация с динамични изображения и SEO оптимизирано съдържание.</p>
-                </article>
-            </div>
-        </section>
+{% block content %}
+<main class="page-shell">
+    <section class="hero">
+        <p class="meta">Модерен дизайн за твоя Django сайт</p>
+        <h1>Здравей, Радо! 🚀</h1>
+        <p class="lead">Това вече е истинска HTML страница с Django. Нещата изглеждат свежо, изчистено и адаптивно на всеки екран.</p>
+        <button class="btn-primary" onclick="alert('Работи!')">Натисни ме</button>
+    </section>
 
-        <section class="section-block gallery">
-            <div class="section-header">
-                <p class="eyebrow">Галерия</p>
-                <h2>Визуално вдъхновение</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">Проект 1</div>
-                <div class="gallery-item">Проект 2</div>
-                <div class="gallery-item">Проект 3</div>
-                <div class="gallery-item">Проект 4</div>
-            </div>
-        </section>
+    <section class="card">
+        <p>Добре дошъл на началната страница. Това е модерна секция, която показва динамичния потенциал на Django, със стил, с който страницата изглежда професионално и приятелски към потребителя.</p>
+        <p>Можеш да добавиш повече съдържание, карти и секции, но вече имаш силна основа с плавен градиент, удобна типография и модерен бутон.</p>
+    </section>
 
-        <section class="section-block company">
-            <div class="section-header">
-                <p class="eyebrow">Описание на фирмата</p>
-                <h2>Ние помагаме на бизнеса да расте</h2>
-            </div>
-            <div class="company-content">
-                <p>Ние сме екип от дизайнери и разработчици, които създават изчистени, функционални сайтове с фокус върху потребителското изживяване. Работим гъвкаво, за да предоставим решения, които изглеждат страхотно и работят ефективно.</p>
-                <ul>
-                    <li>Персонализирани уеб решения</li>
-                    <li>Мобилна и настолна оптимизация</li>
-                    <li>Бързо внедряване и поддръжка</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+    <section class="section-block projects">
+        <div class="section-header">
+            <p class="eyebrow">Изпълнени проекти</p>
+            <h2>Проекти, които движат бизнеса напред</h2>
+        </div>
+        <div class="project-grid">
+            <article class="project-card">
+                <h3>Уеб портал за клиенти</h3>
+                <p>Създадохме бърза платформа за регистрация, управление на поръчки и дигитално обслужване.</p>
+            </article>
+            <article class="project-card">
+                <h3>Респонсив онлайн магазин</h3>
+                <p>Дизайн и разработка на магазин с лесна навигация, бърз checkout и адаптивен интерфейс.</p>
+            </article>
+            <article class="project-card">
+                <h3>Интерактивна галерия</h3>
+                <p>Визуална презентация с динамични изображения и SEO оптимизирано съдържание.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-block gallery">
+        <div class="section-header">
+            <p class="eyebrow">Галерия</p>
+            <h2>Визуално вдъхновение</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">Проект 1</div>
+            <div class="gallery-item">Проект 2</div>
+            <div class="gallery-item">Проект 3</div>
+            <div class="gallery-item">Проект 4</div>
+        </div>
+    </section>
+
+    <section class="section-block company">
+        <div class="section-header">
+            <p class="eyebrow">Описание на фирмата</p>
+            <h2>Ние помагаме на бизнеса да расте</h2>
+        </div>
+        <div class="company-content">
+            <p>Ние сме екип от дизайнери и разработчици, които създават изчистени, функционални сайтове с фокус върху потребителското изживяване. Работим гъвкаво, за да предоставим решения, които изглеждат страхотно и работят ефективно.</p>
+            <ul>
+                <li>Персонализирани уеб решения</li>
+                <li>Мобилна и настолна оптимизация</li>
+                <li>Бързо внедряване и поддръжка</li>
+            </ul>
+        </div>
+    </section>
+</main>
+{% endblock %}
