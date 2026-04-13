@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <section class="page-login">
+        <div class="page-inner">
+            <h1>Вход</h1>
+
+            {% if form.errors %}
+                <div class="message error">
+                    <p>Моля, коригирайте грешките по-долу.</p>
+                </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'login' %}" class="auth-form">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="id_username">Потребителско име</label>
+                    {{ form.username }}
+                </div>
+
+                <div class="form-row">
+                    <label for="id_password">Парола</label>
+                    {{ form.password }}
+                </div>
+
+                <button type="submit">Вход</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
